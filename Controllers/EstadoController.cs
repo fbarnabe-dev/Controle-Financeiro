@@ -20,7 +20,7 @@ public class EstadoController : Controller
 
     // GET 
     [HttpGet]
-    public IActionResult GetEstado()
+    public async Task<IActionResult> GetEstado()
     {
         try
         {
@@ -36,12 +36,12 @@ public class EstadoController : Controller
     
     // POST 
     [HttpPost]
-    public IActionResult PostEstado([FromBody] Estado estado)
+    public async Task<IActionResult> PostEstado([FromBody] Estado estado)
     {
         try
         {
-            _context.Estado.Add(estado);
-            var valor = _context.SaveChanges();
+            await _context.Estado.AddAsync(estado);
+            var valor = await _context.SaveChangesAsync();
             if (valor == 1)
             {
                 return Ok("Sucesso, estado incluido");
@@ -59,12 +59,12 @@ public class EstadoController : Controller
     
     // PUT 
     [HttpPut]
-    public IActionResult PutEstado([FromBody] Estado estado)
+    public async Task<IActionResult> PutEstado([FromBody] Estado estado)
     {
         try
         {
             _context.Estado.Update(estado);
-            var valor = _context.SaveChanges();
+            var valor = await _context.SaveChangesAsync();
             if (valor == 1)
             {
                 return Ok("Sucesso, estado alterado");
@@ -82,16 +82,16 @@ public class EstadoController : Controller
     
     // DELETE 
     [HttpDelete("{sigla}")]
-    public IActionResult DeleteEstado([FromRoute] string sigla)
+    public async Task<IActionResult> DeleteEstado([FromRoute] string sigla)
     {
         try
         {
-            var estado = _context.Estado.Find(sigla);
+            var estado = await _context.Estado.FindAsync(sigla);
 
             if (estado.Sigla == sigla && !string.IsNullOrEmpty(estado.Sigla))
             {
                 _context.Estado.Remove(estado);
-                var valor = _context.SaveChanges();
+                var valor = await _context.SaveChangesAsync();
                 if (valor == 1)
                 {
                     return Ok("Sucesso, estado removido");
@@ -114,11 +114,11 @@ public class EstadoController : Controller
     
     // GET 
     [HttpGet("{sigla}")]
-    public IActionResult GetEstado([FromRoute] string sigla)
+    public async Task<IActionResult> GetEstado([FromRoute] string sigla)
     {
         try
         {
-            var estado = _context.Estado.Find(sigla);
+            var estado = await _context.Estado.FindAsync(sigla);
 
             if (estado.Sigla == sigla && !string.IsNullOrEmpty(estado.Sigla))
             {
@@ -137,7 +137,7 @@ public class EstadoController : Controller
     
     // GET 
     [HttpGet("Pesquisa")]
-    public IActionResult GetEstadoPesquisa([FromQuery] string valor)
+    public async Task<IActionResult> GetEstadoPesquisa([FromQuery] string valor)
     {
         try
         {
@@ -175,7 +175,7 @@ public class EstadoController : Controller
     
     // GET 
     [HttpGet("Paginacao")]
-    public IActionResult GetEstadoPaginacao([FromQuery] string valor, int skip, int take, bool ordemDesc)
+    public async Task<IActionResult> GetEstadoPaginacao([FromQuery] string valor, int skip, int take, bool ordemDesc)
     {
         try
         {

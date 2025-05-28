@@ -17,7 +17,7 @@ public class CidadeController : Controller
     }
 
     [HttpGet]
-    public IActionResult GetCidade()
+    public async Task<IActionResult> GetCidade()
     {
         try
         {
@@ -31,12 +31,12 @@ public class CidadeController : Controller
     }
     
     [HttpPost]
-    public IActionResult PostCidade([FromBody] Cidade cidade)
+    public async Task<IActionResult> PostCidade([FromBody] Cidade cidade)
     {
         try
         {
             _context.Cidade.Add(cidade);
-            var valor = _context.SaveChanges();
+            var valor = await _context.SaveChangesAsync();
             if (valor == 1)
             {
                 return Ok("Cidade incluida com sucesso");
@@ -53,12 +53,12 @@ public class CidadeController : Controller
     }
     
     [HttpPut]
-    public IActionResult PutCidade([FromBody] Cidade cidade)
+    public async Task<IActionResult> PutCidade([FromBody] Cidade cidade)
     {
         try
         {
             _context.Cidade.Update(cidade);
-            var valor = _context.SaveChanges();
+            var valor = await _context.SaveChangesAsync();
             if (valor == 1)
             {
                 return Ok("Cidade alterada com sucesso");
@@ -75,15 +75,15 @@ public class CidadeController : Controller
     }
     
     [HttpDelete("{id}")]
-    public IActionResult DeleteCidade([FromRoute] Guid id)
+    public async Task<IActionResult> DeleteCidade([FromRoute] Guid id)
     {
         try
         {
-            Cidade cidade = _context.Cidade.Find(id);
+            Cidade cidade = await _context.Cidade.FindAsync(id);
             if (cidade != null)
             {
                 _context.Cidade.Remove(cidade);
-                var valor = _context.SaveChanges();
+                var valor = await _context.SaveChangesAsync();
                 if (valor == 1)
                 {
                     return Ok("Cidade removida com sucesso");
@@ -105,11 +105,11 @@ public class CidadeController : Controller
     }
     
     [HttpGet("{id}")]
-    public IActionResult GetCidade([FromRoute] Guid id)
+    public async Task<IActionResult> GetCidade([FromRoute] Guid id)
     {
         try
         {
-            Cidade cidade = _context.Cidade.Find(id);
+            Cidade cidade = await _context.Cidade.FindAsync(id);
             if (cidade != null)
             {
                 return Ok(cidade);
@@ -126,7 +126,7 @@ public class CidadeController : Controller
     }
     
     [HttpGet("Pesquisa")]
-    public IActionResult GetCidadePesquisa([FromQuery] string valor)
+    public async Task<IActionResult> GetCidadePesquisa([FromQuery] string valor)
     {
         try
         {
@@ -145,7 +145,7 @@ public class CidadeController : Controller
     }
     
     [HttpGet("Paginacao")]
-    public IActionResult GetCidadePaginacao([FromQuery] string valor, int skip, int take, bool ordemDesc)
+    public async Task<IActionResult> GetCidadePaginacao([FromQuery] string valor, int skip, int take, bool ordemDesc)
     {
         try
         {
