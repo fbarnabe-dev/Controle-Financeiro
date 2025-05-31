@@ -101,7 +101,7 @@ public class PessoaController : Controller
         }
         catch (Exception e)
         {
-            return BadRequest($"Erro na atualização de pessoa. Exceção:  {e.InnerException.Message}");
+            return BadRequest($"Erro na exclusão de pessoa. Exceção:  {e.InnerException.Message}");
         }
     }
     
