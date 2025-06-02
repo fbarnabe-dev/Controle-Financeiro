@@ -1,3 +1,4 @@
+using System.Text;
 using Microsoft.EntityFrameworkCore;
 using WFConFin.Data;
 
@@ -14,6 +15,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddSwaggerGen();
 
+var chave = Encoding.ASCII.GetBytes(builder.Configuration.GetSection("Chave").Get<string>());
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
