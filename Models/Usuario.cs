@@ -16,7 +16,7 @@ public class Usuario
     public string Login { get; set; }
     
     [Required(ErrorMessage = "O campo Password é obrigatório")]
-    [StringLength(20, MinimumLength = 3, ErrorMessage = "O campo password deve ter entre 3 e 20 caracteres")]
+    [StringLength(100, MinimumLength = 3, ErrorMessage = "O campo password deve ter entre 3 e 20 caracteres")]
     public string Password { get; set; }
     
     [Required(ErrorMessage = "O campo função é obrigatório")]
