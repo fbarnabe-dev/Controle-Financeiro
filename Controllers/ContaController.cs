@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WFConFin.Data;
 using WFConFin.Models;
@@ -7,6 +8,7 @@ namespace WFConFin.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ContaController : Controller
 {
     private readonly WFConFinDbContext _context;
@@ -31,6 +33,7 @@ public class ContaController : Controller
     }
     
     [HttpPost]
+    [Authorize(Roles = "Gerente, Empregado")]
     public async Task<IActionResult> PostConta([FromBody] Conta conta)
     {
         try
@@ -53,6 +56,7 @@ public class ContaController : Controller
     }
     
     [HttpPut]
+    [Authorize(Roles = "Gerente, Empregado")]
     public async Task<IActionResult> PutConta([FromBody] Conta conta)
     {
         try
@@ -75,6 +79,7 @@ public class ContaController : Controller
     }
     
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Gerente")]
     public async Task<IActionResult> DeleteConta([FromRoute] Guid id)
     {
         try

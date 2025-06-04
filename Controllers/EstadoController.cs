@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WFConFin.Data;
 using WFConFin.Models;
@@ -7,6 +8,7 @@ namespace WFConFin.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class EstadoController : Controller
 {
     private readonly WFConFinDbContext  _context;
@@ -36,6 +38,7 @@ public class EstadoController : Controller
     
     // POST 
     [HttpPost]
+    [Authorize(Roles = "Gerente, Empregado")]
     public async Task<IActionResult> PostEstado([FromBody] Estado estado)
     {
         try
@@ -59,6 +62,7 @@ public class EstadoController : Controller
     
     // PUT 
     [HttpPut]
+    [Authorize(Roles = "Gerente, Empregado")]
     public async Task<IActionResult> PutEstado([FromBody] Estado estado)
     {
         try
@@ -82,6 +86,7 @@ public class EstadoController : Controller
     
     // DELETE 
     [HttpDelete("{sigla}")]
+    [Authorize(Roles = "Gerente")]
     public async Task<IActionResult> DeleteEstado([FromRoute] string sigla)
     {
         try
