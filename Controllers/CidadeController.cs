@@ -150,16 +150,21 @@ public class CidadeController : Controller
     }
     
     [HttpGet("Paginacao")]
-    public async Task<IActionResult> GetCidadePaginacao([FromQuery] string valor, int skip, int take, bool ordemDesc)
+    public async Task<IActionResult> GetCidadePaginacao([FromQuery] string? valor, int skip, int take, bool ordemDesc)
     {
         try
         {
             // Query Criteria
             var lista = from o in _context.Cidade.ToList()
-                where o.Nome.ToUpper().Contains(valor.ToUpper()) 
-                      || o.EstadoSigla.ToUpper().Contains(valor.ToUpper())
                 select o;
-            
+            if (!String.IsNullOrWhiteSpace(valor))
+            {
+                lista = from o in lista
+                where o.Nome.ToUpper().Contains(valor.ToUpper())
+                    || o.EstadoSigla.ToUpper().Contains(valor.ToUpper())
+                select o;
+            }
+
             if (ordemDesc)
             {
                 lista = from o in lista
@@ -176,7 +181,7 @@ public class CidadeController : Controller
             var qtde = lista.Count();
             
             lista = lista
-                .Skip(skip)
+                .Skip((skip - 1) * take)
                 .Take(take)
                 .ToList();
 

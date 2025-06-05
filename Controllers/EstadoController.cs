@@ -180,16 +180,22 @@ public class EstadoController : Controller
     
     // GET 
     [HttpGet("Paginacao")]
-    public async Task<IActionResult> GetEstadoPaginacao([FromQuery] string valor, int skip, int take, bool ordemDesc)
+    public async Task<IActionResult> GetEstadoPaginacao([FromQuery] string? valor, int skip, int take, bool ordemDesc)
     {
         try
         {
             // Query Criteria
             var lista = from o in _context.Estado.ToList()
-                where o.Sigla.ToUpper().Contains(valor.ToUpper()) 
-                      || o.Nome.ToUpper().Contains(valor.ToUpper())
                 select o;
-            
+
+            if (!String.IsNullOrWhiteSpace(valor))
+            {
+                lista = from o  in lista
+                where o.Sigla.ToUpper().Contains(valor.ToUpper())
+                    || o.Nome.ToUpper().Contains(valor.ToUpper())
+                select o;
+            }
+
             if (ordemDesc)
             {
                 lista = from o in lista
@@ -206,7 +212,7 @@ public class EstadoController : Controller
             var qtde = lista.Count();
             
             lista = lista
-                .Skip(skip)
+                .Skip((skip - 1) * take)
                 .Take(take)
                 .ToList();
 
