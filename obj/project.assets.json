@@ -9580,7 +9580,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Felipe. B\\.nuget\\packages\\": {}
+    "C:\\Users\\Felipe. B\\.nuget\\packages\\": {},
+    "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -9591,13 +9592,19 @@
       "packagesPath": "C:\\Users\\Felipe. B\\.nuget\\packages\\",
       "outputPath": "E:\\Projetos\\WFConFin\\WFConFin\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Felipe. B\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Felipe. B\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
