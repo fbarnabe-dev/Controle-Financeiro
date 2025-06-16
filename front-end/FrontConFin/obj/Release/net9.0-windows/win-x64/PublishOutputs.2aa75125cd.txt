@@ -1,3 +1,0 @@
-E:\Projetos\FrontConFin\FrontConFin\bin\Release\net9.0-windows\publish\win-x64\FrontConFin.pdb
-E:\Projetos\FrontConFin\FrontConFin\bin\Release\net9.0-windows\publish\win-x64\appsettings.json
-E:\Projetos\FrontConFin\FrontConFin\bin\Release\net9.0-windows\publish\win-x64\FrontConFin.exe
