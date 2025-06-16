@@ -1,0 +1,72 @@
+
+## Ignore arquivos e pastas do Visual Studio
+.vs/
+*.user
+*.suo
+*.sdf
+*.cache
+*.dbmdl
+*.bak
+*.VC.db
+
+## Ignore arquivos de build
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+*.exe
+*.dll
+*.pdb
+*.appx
+*.appxupload
+*.vsix
+*.nupkg
+
+## Logs e arquivos temporários
+*.log
+*.tlog
+*.tmp
+*.temp
+
+## Arquivos de configuração locais
+appsettings.Development.json
+secrets.json
+
+## Ignore pacotes NuGet baixados
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Certificados de desenvolvimento (se você estiver usando com Kestrel)
+*.pem
+*.crt
+*.key
+
+## IDE Rider e outros
+.idea/
+*.sln.iml
+
+## Cache do Windows Forms Designer
+*.resx
+*.resources
+
+## Config do Git
+*.orig
+
+## Config do IIS Express
+.vscode/
+*.launch.json
+
+## Diretório de publicação
+publish/
+
+## Arquivos de deploy local
+Properties/PublishProfiles/
+
+## Outros arquivos comuns
+Thumbs.db
+Desktop.ini
