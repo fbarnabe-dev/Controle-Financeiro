@@ -1,7 +1,0 @@
-E:\Projetos\WFConFin\WFConFin\bin\Release\net9.0\win-x64\publish\appsettings.Development.json
-E:\Projetos\WFConFin\WFConFin\bin\Release\net9.0\win-x64\publish\appsettings.json
-E:\Projetos\WFConFin\WFConFin\bin\Release\net9.0\win-x64\publish\appsettings.Production.json
-E:\Projetos\WFConFin\WFConFin\bin\Release\net9.0\win-x64\publish\appsettings.Staging.json
-E:\Projetos\WFConFin\WFConFin\bin\Release\net9.0\win-x64\publish\WFConFin.pdb
-E:\Projetos\WFConFin\WFConFin\bin\Release\net9.0\win-x64\publish\aspnetcorev2_inprocess.dll
-E:\Projetos\WFConFin\WFConFin\bin\Release\net9.0\win-x64\publish\WFConFin.exe
