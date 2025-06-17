@@ -4,6 +4,22 @@ O projeto visa fornecer uma ferramenta para gerenciar finanças pessoais ou de p
 
 ---
 
+## 🖼️ Prints do Projeto
+
+### 🔐 Tela de Login
+![Tela de Login](assets/Tela_Login.png)
+
+### 📊 Tela Principal 
+![Dashboard](assets/Frm_Principal.png)
+
+### 📝 Tela de Cadastro de Estados
+![Cadastro de Estados](assets/Frm_Estados.png)
+
+### 📝 Tela de Cadastro de Cidades
+![Cadastro de Cidades](assets/Frm_Cidades.png)
+
+---
+
 ## 📁 Estrutura do Projeto
 
 | Pasta           | Descrição                                                                 |
@@ -16,7 +32,7 @@ O projeto visa fornecer uma ferramenta para gerenciar finanças pessoais ou de p
 ## 🚀 Status Atual
 
 - ✅ Autenticação com JWT
-- ✅ CRUD de usuários
+- ✅ CRUD de usuários, cidades e estados
 - ✅ Integração front-end ↔ back-end
 - ⚠️ Funcionalidades pendentes:
   - Cadastro de pessoas
