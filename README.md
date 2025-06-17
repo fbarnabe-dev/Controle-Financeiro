@@ -7,16 +7,16 @@ O projeto visa fornecer uma ferramenta para gerenciar finanças pessoais ou de p
 ## 🖼️ Prints do Projeto
 
 ### 🔐 Tela de Login
-![Tela de Login](assets/Tela_Login.png)
+![Tela de Login](assets/Tela_Login.PNG)
 
 ### 📊 Tela Principal 
-![Dashboard](assets/Frm_Principal.png)
+![Dashboard](assets/Frm_Principal.PNG)
 
 ### 📝 Tela de Cadastro de Estados
-![Cadastro de Estados](assets/Frm_Estados.png)
+![Cadastro de Estados](assets/Frm_Estados.PNG)
 
 ### 📝 Tela de Cadastro de Cidades
-![Cadastro de Cidades](assets/Frm_Cidades.png)
+![Cadastro de Cidades](assets/Frm_Cidades.PNG)
 
 ---
 
